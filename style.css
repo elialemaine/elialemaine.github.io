@@ -3,8 +3,8 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #444; /* Un gris un peu plus doux que le noir pur */
+    background-color: #fdfdfd; /* Fond quasi blanc, très propre */
     line-height: 1.6;
 }
 
@@ -14,78 +14,84 @@ body {
     padding: 20px;
 }
 
-/* --- HEADER (Modifié) --- */
+/* --- HEADER (Adapté au CV) --- */
 header {
     text-align: center;
-    /* Ici, je mets un dégradé sympa. Tu peux mettre une image de fond à la place : 
-       background: url('assets/banniere.jpg') center/cover no-repeat; */
-    background: linear-gradient(135deg, #2b5876, #4e4376);
-    color: white; /* Texte en blanc */
-    padding: 80px 20px 50px; /* Un peu plus d'espace en haut */
+    /* Le Vert Sauge de ton CV */
+    background: linear-gradient(135deg, #8CA694, #6B8576); 
+    color: white; 
+    padding: 80px 20px 50px; 
     margin-bottom: 40px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Une ombre sous la bannière */
+    box-shadow: 0 10px 20px rgba(107, 133, 118, 0.2); /* Ombre teintée verte */
 }
 
-/* Style de la photo ronde */
+/* Photo ronde */
 .profile-pic {
-    width: 150px;     /* Taille de l'image */
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* C'est ça qui fait le rond ! */
-    object-fit: cover;  /* Empêche l'image d'être déformée si elle n'est pas carrée */
-    border: 5px solid rgba(255, 255, 255, 0.3); /* Un bord blanc semi-transparent */
+    border-radius: 50%; 
+    object-fit: cover;
+    /* Bordure blanche simple et élégante */
+    border: 4px solid white; 
     margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
-.subtitle { font-size: 1.3rem; opacity: 0.9; margin-top: 5px; color: #e0e0e0; }
+h1 { margin: 0; font-size: 2.8rem; font-weight: 600; letter-spacing: 1px; }
+.subtitle { font-size: 1.3rem; opacity: 0.95; margin-top: 5px; color: #f1f1f1; font-weight: 300; }
 
-/* Styles des icônes sociales */
+/* Icônes de contact */
 .contact-icons {
     margin: 30px 0;
     display: flex;
     justify-content: center;
-    gap: 25px; /* Espace entre les icônes */
+    gap: 25px;
 }
 
 .contact-icons a {
     color: white;
     text-decoration: none;
-    font-size: 1.8rem; /* Taille des icônes */
+    font-size: 1.8rem;
     transition: transform 0.3s, color 0.3s;
+    opacity: 0.8;
 }
 
 .contact-icons a:hover {
-    color: #ffcc00; /* Changement de couleur au survol */
-    transform: translateY(-5px); /* Petit saut vers le haut au survol */
+    color: #fff; /* Reste blanc */
+    opacity: 1; /* Devient totalement opaque */
+    transform: translateY(-5px); 
 }
 
+/* Bouton CV */
 .btn-cv {
     display: inline-block;
     background: white;
-    color: #4e4376; /* Couleur du texte du bouton */
-    padding: 12px 30px;
+    color: #577361; /* Le texte prend la couleur verte */
+    padding: 12px 35px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
     transition: all 0.3s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid white; /* Pour garder la structure au survol */
 }
+
 .btn-cv:hover {
-    background: #ffcc00; /* Couleur jaune au survol */
-    color: #333;
+    background: transparent; /* Le fond devient transparent */
+    color: white; /* Le texte devient blanc */
+    border: 2px solid white;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
-.btn-cv i { margin-right: 8px; } /* Espace entre l'icône et le texte du bouton */
+.btn-cv i { margin-right: 8px; }
 
 
 /* --- DOSSIERS (ACCORDÉON) --- */
 details {
     background: white;
     margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-radius: 8px; /* Angles un peu moins ronds pour faire plus sérieux */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Ombre plus légère */
     overflow: hidden;
     border: 1px solid #eee;
 }
@@ -94,30 +100,34 @@ summary {
     padding: 20px;
     font-size: 1.4rem;
     font-weight: 600;
+    color: #577361; /* Titres des dossiers en vert */
     cursor: pointer;
     list-style: none;
     background: #fff;
     transition: background 0.3s, color 0.3s;
-    /* Petite flèche personnalisée */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Ajoute une petite flèche à droite qui tourne quand c'est ouvert */
 summary::after {
     content: '▶';
     font-size: 0.8rem;
     transition: transform 0.3s;
+    color: #8CA694; /* Flèche verte */
 }
+
 details[open] summary::after {
     transform: rotate(90deg);
 }
 
-summary:hover { background: #f8f9fa; color: #4e4376; }
+summary:hover { 
+    background: #f4f8f5; /* Fond très légèrement vert au survol */
+    color: #3e5245; /* Vert plus foncé */
+}
 
 /* --- LISTE DES PROJETS --- */
-.portfolio-list { padding: 40px; border-top: 1px solid #eee; }
+.portfolio-list { padding: 40px; border-top: 1px solid #f0f0f0; }
 
 .projet {
     display: flex;
@@ -126,6 +136,7 @@ summary:hover { background: #f8f9fa; color: #4e4376; }
     margin-bottom: 60px;
 }
 
+/* Inverser un projet sur deux */
 .projet:nth-child(even) {
     flex-direction: row-reverse;
     text-align: right;
@@ -134,28 +145,35 @@ summary:hover { background: #f8f9fa; color: #4e4376; }
 .visuel { flex: 1; }
 .visuel img {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s;
 }
-.visuel img:hover { transform: scale(1.02); }
+.visuel img:hover { transform: scale(1.01); }
 
 .description { flex: 1; }
-.description h3 { font-size: 1.5rem; margin-bottom: 10px; color: #2b5876;}
+/* Titre des projets en vert foncé pour rappeler la charte */
+.description h3 { 
+    font-size: 1.6rem; 
+    margin-bottom: 10px; 
+    color: #577361; 
+}
 
 .meta {
-    font-size: 0.9rem;
-    color: #888;
+    font-size: 0.85rem;
+    color: #666;
     margin-bottom: 15px;
-    font-style: italic;
-    background: #f0f2f5;
+    font-style: normal; /* Plus moderne en normal qu'en italique */
+    background: #f1f5f2; /* Fond méta légèrement vert */
+    color: #577361;
     display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 /* --- FOOTER --- */
-footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem;}
+footer { text-align: center; padding: 40px; color: #999; font-size: 0.9rem;}
 
 /* --- MOBILE --- */
 @media (max-width: 768px) {
@@ -164,6 +182,6 @@ footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem;}
         text-align: left;
         gap: 20px;
     }
-    header { padding: 40px 20px; }
+    header { padding: 50px 20px; }
     h1 { font-size: 2rem; }
 }
