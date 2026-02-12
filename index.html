@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Style pour les vidéos locales (.mp4) */
+        /* CSS pour les images et vidéos locales */
         video {
             width: 100%;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        /* Style indispensable pour que YouTube s'affiche bien */
+        /* CSS OBLIGATOIRE pour l'affichage YouTube */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* Ratio 16:9 */
@@ -71,13 +71,7 @@
                 <article class="projet">
                     <div class="visuel">
                         <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/6K3Xs36kh54" 
-                                title="Au delà du vide" 
-                                frameborder="0" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                allowfullscreen>
-                            </iframe>
+                            <iframe src="https://www.youtube.com/embed/6K3Xs36kh54" title="Au delà du vide" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="description">
@@ -90,15 +84,29 @@
 
                 <article class="projet">
                     <div class="visuel">
-                        <video controls>
-                            <source src="pub-sony.mp4" type="video/mp4">
-                        </video>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/B4cnATDaJAs" title="Pub Sony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
                     </div>
                     <div class="description">
                         <h3>PUB Sony</h3>
                         <p class="meta">📅 BUT 3 | 🛠️ Premiere Pro</p>
                         <p><strong>Contexte :</strong> Réalisation d'une pub pour un appareil photo Sony.</p>
                         <p>Scénarisation, tournage, montage, sound design.</p>
+                    </div>
+                </article>
+
+                <article class="projet">
+                    <div class="visuel">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/VWbFBRx1cmw" title="Interview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <h3>Interview</h3>
+                        <p class="meta">📅 Réalisation récente</p>
+                        <p><strong>Contexte :</strong> Exercice d'interview et captation.</p>
+                        <p>Gestion de la lumière, du son et montage de l'entretien.</p>
                     </div>
                 </article>
 
@@ -143,9 +151,9 @@
             <div class="portfolio-list">
                 <article class="projet">
                     <div class="visuel">
-                         <video controls>
-                            <source src="motion-design.mp4" type="video/mp4">
-                        </video>
+                         <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/t9LidYjZoT0" title="Motion Design" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
                     </div>
                     <div class="description">
                         <h3>Motion Design</h3>
@@ -203,9 +211,9 @@
 
                 <article class="projet">
                     <div class="visuel">
-                        <video controls>
-                            <source src="edit-valo.mp4" type="video/mp4">
-                        </video>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/XUM7USfv46U" title="Montage Valorant" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
                     </div>
                     <div class="description">
                         <h3>Montage de clips</h3>
