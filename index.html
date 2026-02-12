@@ -8,11 +8,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Petit ajout pour que les vidéos s'adaptent bien */
+        /* CSS pour les vidéos locales (fichiers .mp4) */
         video {
             width: 100%;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        /* AJOUT : CSS indispensable pour les vidéos YouTube (iframe) */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 pour garder la bonne forme */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: #000; /* Fond noir pendant le chargement */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -49,18 +68,17 @@
         <details open> <summary>🎬 Vidéos</summary>
             <div class="portfolio-list">
                 
-                <article class="projet">                    
-    <div class="video-container">
-        <iframe width="560" height="315" 
-        src="https://www.youtube.com/watch?v=6K3Xs36kh54" 
-        title="Au delà du vide" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-        </iframe>
-    </div>
-</div>
-</div>
-                        </video>
+                <article class="projet">
+                    <div class="visuel">
+                        <div class="video-container">
+                            <iframe 
+                                src="https://www.youtube.com/embed/6K3Xs36kh54" 
+                                title="Au delà du vide" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
                     </div>
                     <div class="description">
                         <h3>Au delà du vide</h3>
@@ -126,7 +144,7 @@
                 <article class="projet">
                     <div class="visuel">
                          <video controls>
-                            <source src="motion-design.mp4" type="video/mp4" alt="Motion Design">
+                            <source src="motion-design.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="description">
@@ -195,18 +213,4 @@
                         <p><strong>Contexte :</strong> Montage highlights Valorant.</p>
                         <p>Montage dynamique, rythme, effets.</p>
                     </div>
-                </article>
-            </div>
-        </details>
-    </main>
-
-    <footer>
-        <p>© 2026 Elia LEMAINE - Hébergé sur Github - Tous droits réservés</p>
-    </footer>
-
-</body>
-</html>
-
-
-
-
+                </article
