@@ -3,42 +3,54 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    color: #444; /* Un gris un peu plus doux que le noir pur */
-    background-color: #fdfdfd; /* Fond quasi blanc, très propre */
+    color: #444; 
+    background-color: #fdfdfd; 
     line-height: 1.6;
 }
 
+/* J'ai élargi un peu le conteneur pour que les 2 colonnes aient de la place */
 .container {
-    max-width: 1000px;
+    max-width: 1100px; 
     margin: 0 auto;
     padding: 20px;
 }
 
 /* --- HEADER (Adapté au CV) --- */
-/* --- MISE EN PAGE DU HEADER EN 2 COLONNES --- */
-.header-content {
-    display: flex;
-    align-items: center; /* Centre verticalement */
-    justify-content: space-between;
-    gap: 50px; /* Espace entre la gauche et la droite */
-    text-align: left;
+header {
+    background: linear-gradient(135deg, #8CA694, #6B8576); 
+    color: white; 
+    padding: 60px 20px; 
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px rgba(107, 133, 118, 0.2); 
 }
 
+/* --- MISE EN PAGE DU HEADER EN 2 COLONNES FORCÉE --- */
+.header-content {
+    display: flex;
+    flex-direction: row; /* FORCE l'affichage de gauche à droite */
+    align-items: center; 
+    justify-content: space-between;
+    gap: 50px; 
+}
+
+/* BOÎTE DE GAUCHE (Ton profil) */
 .header-profile {
-    flex: 1; /* Prend la moitié de l'espace */
+    flex: 0 0 350px; /* Force une largeur de 350px pour ne pas être écrasée */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre ta photo et le bouton CV */
+    align-items: center; 
     text-align: center;
 }
 
+/* BOÎTE DE DROITE (Ta présentation) */
 .header-about {
-    flex: 1; /* Prend l'autre moitié */
-    background: rgba(255, 255, 255, 0.1); /* Fond semi-transparent élégant */
-    padding: 30px;
+    flex: 1; /* Prend tout le reste de la place disponible à droite */
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 35px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left; /* Force le texte à s'aligner à gauche dans sa boîte */
 }
 
 .header-about h2 {
@@ -56,13 +68,12 @@ body {
     opacity: 0.95;
 }
 
-/* Photo ronde */
+/* --- ELEMENTS DU PROFIL --- */
 .profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%; 
     object-fit: cover;
-    /* Bordure blanche simple et élégante */
     border: 4px solid white; 
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
@@ -71,7 +82,6 @@ body {
 h1 { margin: 0; font-size: 2.8rem; font-weight: 600; letter-spacing: 1px; }
 .subtitle { font-size: 1.3rem; opacity: 0.95; margin-top: 5px; color: #f1f1f1; font-weight: 300; }
 
-/* Icônes de contact */
 .contact-icons {
     margin: 30px 0;
     display: flex;
@@ -88,28 +98,27 @@ h1 { margin: 0; font-size: 2.8rem; font-weight: 600; letter-spacing: 1px; }
 }
 
 .contact-icons a:hover {
-    color: #fff; /* Reste blanc */
-    opacity: 1; /* Devient totalement opaque */
+    color: #fff; 
+    opacity: 1; 
     transform: translateY(-5px); 
 }
 
-/* Bouton CV */
 .btn-cv {
     display: inline-block;
     background: white;
-    color: #577361; /* Le texte prend la couleur verte */
+    color: #577361; 
     padding: 12px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border: 2px solid white; /* Pour garder la structure au survol */
+    border: 2px solid white; 
 }
 
 .btn-cv:hover {
-    background: transparent; /* Le fond devient transparent */
-    color: white; /* Le texte devient blanc */
+    background: transparent; 
+    color: white; 
     border: 2px solid white;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -121,8 +130,8 @@ h1 { margin: 0; font-size: 2.8rem; font-weight: 600; letter-spacing: 1px; }
 details {
     background: white;
     margin-bottom: 20px;
-    border-radius: 8px; /* Angles un peu moins ronds pour faire plus sérieux */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Ombre plus légère */
+    border-radius: 8px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
     overflow: hidden;
     border: 1px solid #eee;
 }
@@ -131,7 +140,7 @@ summary {
     padding: 20px;
     font-size: 1.4rem;
     font-weight: 600;
-    color: #577361; /* Titres des dossiers en vert */
+    color: #577361; 
     cursor: pointer;
     list-style: none;
     background: #fff;
@@ -145,7 +154,7 @@ summary::after {
     content: '▶';
     font-size: 0.8rem;
     transition: transform 0.3s;
-    color: #8CA694; /* Flèche verte */
+    color: #8CA694; 
 }
 
 details[open] summary::after {
@@ -153,8 +162,8 @@ details[open] summary::after {
 }
 
 summary:hover { 
-    background: #f4f8f5; /* Fond très légèrement vert au survol */
-    color: #3e5245; /* Vert plus foncé */
+    background: #f4f8f5; 
+    color: #3e5245; 
 }
 
 /* --- LISTE DES PROJETS --- */
@@ -167,7 +176,6 @@ summary:hover {
     margin-bottom: 60px;
 }
 
-/* Inverser un projet sur deux */
 .projet:nth-child(even) {
     flex-direction: row-reverse;
     text-align: right;
@@ -183,7 +191,6 @@ summary:hover {
 .visuel img:hover { transform: scale(1.01); }
 
 .description { flex: 1; }
-/* Titre des projets en vert foncé pour rappeler la charte */
 .description h3 { 
     font-size: 1.6rem; 
     margin-bottom: 10px; 
@@ -194,8 +201,8 @@ summary:hover {
     font-size: 0.85rem;
     color: #666;
     margin-bottom: 15px;
-    font-style: normal; /* Plus moderne en normal qu'en italique */
-    background: #f1f5f2; /* Fond méta légèrement vert */
+    font-style: normal; 
+    background: #f1f5f2; 
     color: #577361;
     display: inline-block;
     padding: 6px 12px;
@@ -203,15 +210,37 @@ summary:hover {
     font-weight: 500;
 }
 
+/* CSS OBLIGATOIRE pour l'affichage YouTube (tu l'avais dans ton HTML, je le mets ici c'est plus propre) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
 /* --- FOOTER --- */
 footer { text-align: center; padding: 40px; color: #999; font-size: 0.9rem;}
 
 /* --- MOBILE --- */
-/* --- MOBILE --- */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
     .header-content {
-        flex-direction: column; /* Empile la photo et le texte */
+        flex-direction: column; /* Force le retour à la ligne sur les petits écrans */
         gap: 30px;
+    }
+    .header-profile {
+        flex: auto;
     }
     .projet, .projet:nth-child(even) {
         flex-direction: column;
@@ -219,9 +248,5 @@ footer { text-align: center; padding: 40px; color: #999; font-size: 0.9rem;}
         gap: 20px;
     }
     header { padding: 40px 20px; }
-    h1 { font-size: 2rem; }
-}
-    }
-    header { padding: 50px 20px; }
     h1 { font-size: 2rem; }
 }
