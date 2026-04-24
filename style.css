@@ -15,43 +15,48 @@ body {
 }
 
 /* --- HEADER --- */
-header {
-    background: linear-gradient(135deg, #8CA694, #6B8576); /* Vert Sauge du CV */
-    color: white;
-    padding: 60px 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 20px rgba(107, 133, 118, 0.2);
-}
-
-/* MISE EN PAGE 2 COLONNES */
+/* --- MISE EN PAGE 2 COLONNES --- */
 .header-content {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+    align-items: center; 
+    justify-content: center;
+    gap: 60px; /* Plus d'espace entre la gauche et la droite */
 }
 
+/* BOÎTE DE GAUCHE */
 .header-left {
-    flex: 0 0 350px; /* Largeur fixe pour la partie photo/nom */
+    flex: 0 0 380px; /* On a élargi ici pour que "LEMAINE" ne soit plus coupé ! */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
+/* BOÎTE DE DROITE (L'encadré) */
 .header-right {
-    flex: 1; /* Prend tout le reste de la place */
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    flex: 1; /* Prend le reste de la place */
+    background: rgba(255, 255, 255, 0.2); /* Un fond blanc semi-transparent plus visible */
+    padding: 35px 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Petite bordure blanche */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); /* Ombre pour faire ressortir l'encadré */
     text-align: left;
 }
 
 .header-right h2 {
     margin-top: 0;
     font-size: 1.8rem;
-    border-bottom: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Ligne sous le titre */
     padding-bottom: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.header-right p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #fdfdfd; /* Texte bien blanc */
 }
 
 /* --- ÉLÉMENTS DE PROFIL --- */
@@ -172,9 +177,21 @@ summary {
 footer { text-align: center; padding: 40px; color: #999; }
 
 /* --- RESPONSIVE MOBILE --- */
+/* --- MOBILE --- */
 @media (max-width: 850px) {
-    .header-content { flex-direction: column; text-align: center; }
-    .header-left { flex: auto; }
-    .header-right { text-align: center; }
-    .projet, .projet:nth-child(even) { flex-direction: column; text-align: left; }
+    .header-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .header-left {
+        flex: auto;
+        width: 100%;
+    }
+    .projet, .projet:nth-child(even) {
+        flex-direction: column;
+        text-align: left;
+        gap: 20px;
+    }
+    header { padding: 40px 20px; }
+    h1 { font-size: 2rem; }
 }
