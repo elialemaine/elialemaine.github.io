@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 1200px; /* Élargi pour donner de l'espace aux deux colonnes */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -26,11 +26,11 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 60px; /* Plus d'espace entre la photo et le texte */
+    gap: 60px;
 }
 
 .header-left {
-    flex: 0 0 420px; /* Beaucoup plus large pour ne pas écraser ton nom et ton métier */
+    flex: 0 0 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,33 +39,21 @@ header {
 
 .header-right {
     flex: 1;
-    background: rgba(255, 255, 255, 0.25); /* Un fond blanc plus opaque pour un vrai effet d'encadré */
+    background: rgba(255, 255, 255, 0.25);
     padding: 40px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure plus visible */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Belle ombre pour faire ressortir la boîte */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.header-right h2 { 
-    margin-top: 0; 
-    border-bottom: 2px solid rgba(255,255,255,0.4); 
-    padding-bottom: 10px; 
-    margin-bottom: 15px;
-    color: white;
-}
-
-.header-right p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #fcfcfc;
-}
+.header-right h2 { margin-top: 0; border-bottom: 2px solid rgba(255,255,255,0.4); padding-bottom: 10px; margin-bottom: 15px; color: white;}
+.header-right p { font-size: 1.05rem; color: #fcfcfc; }
 
 /* --- ELEMENTS PROFIL --- */
 .profile-pic {
-    width: 160px; height: 160px; /* Un peu plus grand */
+    width: 160px; height: 160px;
     border-radius: 50%; object-fit: cover;
     border: 4px solid white; margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
@@ -73,30 +61,30 @@ h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
 
 .contact-icons { margin: 25px 0; display: flex; justify-content: center; gap: 20px; }
 .contact-icons a { color: white; font-size: 1.8rem; transition: 0.3s; }
-.contact-icons a:hover { transform: translateY(-3px); color: #fff; }
+.contact-icons a:hover { transform: translateY(-3px); }
 
 .btn-cv {
     display: inline-block; background: white; color: #577361;
     padding: 12px 30px; border-radius: 50px;
     text-decoration: none; font-weight: 600;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 /* --- PROJETS --- */
-details { background: white; margin-bottom: 15px; border-radius: 8px; border: 1px solid #eee; overflow: hidden; }
+details { background: white; margin-bottom: 20px; border-radius: 8px; border: 1px solid #eee; overflow: hidden; }
 summary { padding: 15px 20px; font-size: 1.3rem; font-weight: 600; color: #577361; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
 summary:hover { background: #f4f8f5; }
 
 .portfolio-list { padding: 30px; border-top: 1px solid #f5f5f5; }
-.projet { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; }
+.projet { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; }
 .projet:nth-child(even) { flex-direction: row-reverse; text-align: right; }
 
 .visuel { flex: 1; }
 .visuel img { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.description { flex: 1; }
-.description h3 { color: #577361; margin-top: 0; }
 
-.meta { font-size: 0.85rem; background: #f1f5f2; color: #577361; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+.description { flex: 1; }
+.description h3 { color: #577361; margin-top: 0; font-size: 1.6rem; }
+
+.meta { font-size: 0.85rem; background: #f1f5f2; color: #577361; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; font-weight: 500; }
 
 /* YOUTUBE */
 .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; }
@@ -107,5 +95,5 @@ summary:hover { background: #f4f8f5; }
     .header-content { flex-direction: column; text-align: center; gap: 40px; }
     .header-left { flex: auto; width: 100%; }
     .header-right { text-align: left; }
-    .projet, .projet:nth-child(even) { flex-direction: column; text-align: left; }
+    .projet, .projet:nth-child(even) { flex-direction: column; text-align: left; gap: 20px; }
 }
