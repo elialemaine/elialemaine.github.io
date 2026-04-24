@@ -90,12 +90,11 @@ summary {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    list-style: none; /* Cache la flèche par défaut du navigateur */
+    list-style: none;
 }
 
 summary:hover { background: #f4f8f5; }
 
-/* RETOUR DES FLÈCHES SUR LES MENUS DÉROULANTS */
 summary::after {
     content: '▶';
     font-size: 0.8rem;
@@ -112,9 +111,8 @@ details[open] summary::after {
 .projet { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; }
 .projet:nth-child(even) { flex-direction: row-reverse; text-align: right; }
 
-/* RETOUR DE LA LIMITE DE TAILLE POUR LES VIDÉOS LOCALES */
 .visuel { flex: 1; }
-.visuel img, .visuel video { 
+.visuel img { 
     width: 100%; 
     border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
@@ -125,18 +123,17 @@ details[open] summary::after {
 
 .meta { font-size: 0.85rem; background: #f1f5f2; color: #577361; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; font-weight: 500; }
 
-/* YOUTUBE */
+/* --- YOUTUBE ET VIDEOS LOCALES --- */
 .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.video-container iframe, .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 
-/* --- FOOTER (RETOUR DU CENTRAGE) --- */
+/* --- FOOTER --- */
 footer { 
     text-align: center; 
     padding: 40px; 
     color: #999; 
     font-size: 0.9rem;
 }
-
 
 /* --- MOBILE --- */
 @media (max-width: 900px) {
