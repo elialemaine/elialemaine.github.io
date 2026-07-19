@@ -14,14 +14,43 @@ body {
 
 /* --- HEADER EN 2 COLONNES --- */
 header {
+    position: relative;
     background: linear-gradient(135deg, #8CA694, #6B8576); 
     color: white; 
     padding: 60px 20px; 
     margin-bottom: 40px;
     box-shadow: 0 10px 20px rgba(107, 133, 118, 0.2);
+    overflow: hidden; /* pour que les icônes décoratives ne débordent pas */
 }
 
+/* --- ICÔNES MULTIMÉDIA DÉCORATIVES DANS LE HEADER --- */
+/* Motif discret d'icônes en lien avec le métier (vidéo, photo, graphisme, son, com) */
+.header-icons {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none; /* décoratif : ne gêne jamais le clic */
+}
+
+.header-icons i {
+    position: absolute;
+    color: white;
+    opacity: 0.12;
+}
+
+/* Positionnement + rotation légère de chaque icône : dispersion volontairement irrégulière */
+.header-icons i:nth-child(1)  { top: 8%;   left: 5%;   font-size: 2.4rem; transform: rotate(-12deg); }
+.header-icons i:nth-child(2)  { top: 70%;  left: 10%;  font-size: 1.8rem; transform: rotate(8deg); }
+.header-icons i:nth-child(3)  { top: 15%;  left: 92%;  font-size: 2.1rem; transform: rotate(15deg); }
+.header-icons i:nth-child(4)  { top: 78%;  left: 88%;  font-size: 2.6rem; transform: rotate(-8deg); }
+.header-icons i:nth-child(5)  { top: 45%;  left: 2%;   font-size: 1.6rem; transform: rotate(20deg); }
+.header-icons i:nth-child(6)  { top: 5%;   left: 45%;  font-size: 1.7rem; transform: rotate(-6deg); }
+.header-icons i:nth-child(7)  { top: 85%;  left: 50%;  font-size: 1.9rem; transform: rotate(10deg); }
+.header-icons i:nth-child(8)  { top: 38%;  left: 96%;  font-size: 1.5rem; transform: rotate(-15deg); }
+
 .header-content {
+    position: relative;
+    z-index: 1; /* le contenu passe au-dessus des icônes décoratives */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -50,11 +79,24 @@ header {
 .header-right p { font-size: 1.05rem; color: #fcfcfc; }
 
 /* --- ELEMENTS PROFIL --- */
-.profile-pic {
+/* Le cadre rond fixe la taille et masque le débordement (overflow: hidden). */
+/* La photo à l'intérieur peut être zoomée/repositionnée indépendamment du cadre. */
+.profile-pic-wrap {
     width: 160px; height: 160px;
-    border-radius: 50%; object-fit: cover;
-    border: 4px solid white; margin-bottom: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid white;
+    margin-bottom: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* ajustez si le visage n'est pas centré */
+    transform: scale(1.15); /* zoom pour supprimer les marges/le vide autour du visage */
+    display: block;
 }
 
 h1 { margin: 0; font-size: 2.8rem; font-weight: 600; }
@@ -121,6 +163,23 @@ details[open] summary::after {
 .description { flex: 1; }
 .description h3 { color: #577361; margin-top: 0; font-size: 1.6rem; }
 
+/* Titre de projet cliquable : même couleur que le texte, soulignement au survol seulement */
+.description h3 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+.description h3 a:hover {
+    border-bottom-color: #8CA694;
+    color: #6B8576;
+}
+.description h3 a::after {
+    content: " →";
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
 .meta { font-size: 0.85rem; background: #f1f5f2; color: #577361; padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px; font-weight: 500; }
 
 /* --- YOUTUBE ET VIDEOS LOCALES --- */
@@ -141,4 +200,80 @@ footer {
     .header-left { flex: auto; width: 100%; }
     .header-right { text-align: left; }
     .projet, .projet:nth-child(even) { flex-direction: column; text-align: left; gap: 20px; }
+}
+
+/* ==========================================================================
+   PAGES PROJET (fiches individuelles)
+   ========================================================================== */
+
+.page-projet-header {
+    background: linear-gradient(135deg, #8CA694, #6B8576);
+    color: white;
+    padding: 25px 20px;
+    margin-bottom: 40px;
+}
+
+.retour-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: background 0.2s;
+}
+.retour-link:hover { background: rgba(255,255,255,0.3); }
+
+.retour-link.bas {
+    color: #577361;
+    background: #f1f5f2;
+    border: 1px solid #e0e8e2;
+    margin: 50px auto 20px auto;
+    width: fit-content;
+    display: flex;
+}
+.retour-link.bas:hover { background: #e4ede6; }
+
+.fiche-projet {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+}
+
+.fiche-projet h1 {
+    color: #577361;
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.fiche-projet .meta {
+    margin-bottom: 25px;
+}
+
+.fiche-media {
+    margin-bottom: 30px;
+}
+.fiche-media img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.fiche-projet section {
+    margin-bottom: 30px;
+}
+
+.fiche-projet h2 {
+    color: #577361;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #f1f5f2;
+    padding-bottom: 8px;
+}
+
+.retour-bas-wrap {
+    text-align: center;
 }
