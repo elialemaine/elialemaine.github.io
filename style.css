@@ -35,7 +35,7 @@ header {
 .header-icons i {
     position: absolute;
     color: white;
-    opacity: 0.12;
+    opacity: 0.35; /* ← 0.12 avant ; montez vers 0.5 pour plus de contraste, baissez pour plus de discrétion */
 }
 
 /* Positionnement + rotation légère de chaque icône : dispersion volontairement irrégulière */
@@ -277,3 +277,75 @@ footer {
 .retour-bas-wrap {
     text-align: center;
 }
+
+/* Image unique insérée dans le texte "Le projet en détail" */
+.img-detail {
+    max-width: 500px;   /* ← changez cette valeur pour agrandir/réduire */
+    width: 100%;        /* ne dépasse jamais 500px, mais reste responsive en dessous */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px auto;  /* centre l'image */
+    display: block;
+}
+
+/* Galerie : plusieurs images côte à côte, à mettre dans un <div class="galerie-detail"> */
+.galerie-detail {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+.galerie-detail img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Légende optionnelle sous une image */
+.img-detail + em,
+.galerie-detail + em {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: -10px;
+}
+
+/* PDF intégré dans une fiche projet */
+.pdf-container {
+    width: 100%;
+    height: 600px; /* ajustez selon la hauteur souhaitée */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin: 20px 0 10px 0;
+}
+.pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Lien de secours pour ouvrir/télécharger le PDF (utile sur mobile, où l'aperçu marche mal) */
+.pdf-fallback {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #577361;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+.pdf-fallback:hover { text-decoration: underline; }
+
+/* Lien inséré au milieu d'une phrase (ex: "@frammi_awards" cité dans un paragraphe) */
+.lien-inline {
+    color: #577361;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid #8CA694;
+}
+.lien-inline:hover { color: #6B8576; }
